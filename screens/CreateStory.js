@@ -74,37 +74,45 @@ export default class CreateStory extends Component {
                     style={styles.previewImage}
                 />
                 <View style={{height:RFValue(this.state.dropDownHeight)}}>
-                    <DropDownPicker 
-                        items = {[
-                            {label:'image_1', value:'image_1'},
-                            {label:'image_2', value:'image_2'},
-                            {label:'image_3', value:'image_3'},
-                            {label:'image_4', value:'image_4'},
-                            {label:'image_5', value:'image_5'},
-                        ]}
-                        defaultValue = {this.state.preview_images}
-                        containerStyle={{height:40, borderRadius:20, marginBottom:10}}
-                        onOpen={()=>{
-                            this.setState({
-                                dropDownHeight:170
-                            })
-                        }}
-                        onClose={()=>{
-                            this.setState({
-                                dropDownHeight:40
-                            })
-                        }}
-                        style={{backgroundColor:'transparent'}}
-                        itemStyle={{justifyContent:"flex-start"}}
-                        dropDownStyle={{backgroundColor:"#2f345d"}}
-                        labelStyle={{color:"white", fontFamily:'Bubblegum-Sans'}}
-                        arrowStyle={{color:"white", fontFamily:'Bubblegum-Sans'}}
-                        onChangeItem={item=>
-                            this.setState({
-                                preview_images:item.value
-                            })
-                        }
-                    />
+                <DropDownPicker
+                  items={[
+                    { label: "Image 1", value: "image_1" },
+                    { label: "Image 2", value: "image_2" },
+                    { label: "Image 3", value: "image_3" },
+                    { label: "Image 4", value: "image_4" },
+                    { label: "Image 5", value: "image_5" }
+                  ]}
+                  defaultValue={this.state.previewImage}
+                  containerStyle={{
+                    height: 40,
+                    borderRadius: 20,
+                    marginBottom: 10
+                  }}
+                  onOpen={() => {
+                    this.setState({ dropdownHeight: 170 });
+                  }}
+                  onClose={() => {
+                    this.setState({ dropdownHeight: 40 });
+                  }}
+                  style={{ backgroundColor: "transparent" }}
+                  itemStyle={{
+                    justifyContent: "flex-start"
+                  }}
+                  dropDownStyle={{ backgroundColor: "#2f345d" }}
+                  labelStyle={{
+                    color: "white",
+                    fontFamily: "Bubblegum-Sans"
+                  }}
+                  arrowStyle={{
+                    color: "white",
+                    fontFamily: "Bubblegum-Sans"
+                  }}
+                  onChangeItem={item =>
+                    this.setState({
+                      preview_image: item.value
+                    })
+                  }
+                />
                 </View>
                 <TextInput 
                     style={styles.inputFont}
